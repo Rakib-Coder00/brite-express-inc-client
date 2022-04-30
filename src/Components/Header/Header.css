@@ -1,0 +1,22 @@
+.navbar{
+    -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+}
+.nav-link:hover{
+    color: #e5345b!important;
+}
+.navbar-brand span{
+    letter-spacing: 2px;
+    /* font-family: var(--lg-font); */
+}
+.nav-item{
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+
+/* media queries */
+@media(min-width: 992px){
+    .nav-item{
+        border-bottom: none;
+    }
+}
