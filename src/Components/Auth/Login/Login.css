@@ -9,8 +9,15 @@
 .login-container .screen {		
 	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
 	position: relative;	
-	height: 600px;
-	width: 360px;	
+	height: 650px;
+	width: 400px;	
+	box-shadow: 0px 0px 24px #5C5696;
+}
+.login-container .signup-screen {		
+	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
+	position: relative;	
+	height: 700px;
+	width: 400px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }
 
@@ -74,8 +81,8 @@
 
 .login {
 	width: 320px;
-	padding: 30px;
-	padding-top: 156px;
+	padding: 0 30px;
+	padding-top: 50px;
 }
 
 .login__field {
@@ -110,7 +117,7 @@
 .login__submit {
 	background: #fff;
 	font-size: 14px;
-	margin-top: 30px;
+	margin-top: 50px;
 	padding: 16px 20px;
 	border-radius: 26px;
 	border: 1px solid #D4D3E8;
@@ -140,7 +147,7 @@
 
 .social-login {	
 	position: absolute;
-	height: 140px;
+	height: 100px;
 	width: 160px;
 	text-align: center;
 	bottom: 0px;
@@ -163,4 +170,23 @@
 
 .social-login__icon:hover {
 	transform: scale(1.5);	
+}
+.error {
+    margin-top: 10px;
+    color: red;
+    font-size: 15px;
+  }
+.dot{
+ 	padding:20px 30px;
+}
+.redirect {
+	font-weight: 500;
+	margin-top: 10px;
+	color: #000000;
+}
+  
+.redirect span {
+	text-decoration: underline;
+	cursor: pointer;
+	color: #dbec7a;
 }
