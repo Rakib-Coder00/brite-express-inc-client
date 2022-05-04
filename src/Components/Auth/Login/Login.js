@@ -64,7 +64,7 @@ const Login = () => {
         }
     }
     return (
-        <div className="login-container py-5">
+        <div className="login-container">
             <div className="screen">
                 <div className="screen__content">
                     <form onSubmit={handleLogin} className="login">

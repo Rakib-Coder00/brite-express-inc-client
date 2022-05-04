@@ -15,7 +15,7 @@ const Header = () => {
         toast.success('Successfully Logout!', { id: 'logout' })
     }
     return (
-        <nav sticky="top" className="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+        <nav sticky="top" className="navbar navbar-expand-lg navbar-light bg-white py-4">
             <div className="container">
                 <NavLink to='/' className="navbar-brand d-flex justify-content-between align-items-center order-lg-0" >
                     {/* <img src = "images/shopping-bag-icon.png" alt = "site icon"> */}
@@ -52,7 +52,7 @@ const Header = () => {
                             <NavLink to='/' className="nav-link text-uppercase text-dark">specials</NavLink>
                         </li>
                         <li className="nav-item px-2 py-2">
-                            <NavLink to='./' className="nav-link text-uppercase text-dark">blogs</NavLink>
+                            <NavLink to='./blog' className="nav-link text-uppercase text-dark">blogs</NavLink>
                         </li>
                         <li className="nav-item px-2 py-2">
                             <NavLink to='./' className="nav-link text-uppercase text-dark">about us</NavLink>
