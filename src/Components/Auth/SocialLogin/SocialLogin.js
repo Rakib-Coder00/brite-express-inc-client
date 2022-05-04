@@ -1,7 +1,7 @@
-import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Button, Spinner } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { Spinner } from 'react-bootstrap';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';

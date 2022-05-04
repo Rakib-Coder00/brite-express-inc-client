@@ -7,7 +7,7 @@
 }
 .navbar-brand span{
     letter-spacing: 2px;
-    /* font-family: var(--lg-font); */
+    font-family: 'Kaisei Tokumin', serif;
 }
 .nav-item{
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
