@@ -45,7 +45,7 @@ const NotFound = () => {
 
                 <div className="text">
                     <article>
-                        <p className='my-'>Uh oh! Looks like you got lost. <br/>Go back to the homepage if you dare!</p>
+                        <p className=''>Uh oh! Looks like you got lost. <br/>Go back to the homepage if you dare!</p>
                         <button onClick={()=>navigate('/')} to='/'>take me home!</button>
                     </article>
                 </div>

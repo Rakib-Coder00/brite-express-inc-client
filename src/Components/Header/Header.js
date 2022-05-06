@@ -10,6 +10,7 @@ import './Header.css'
 
 const Header = () => {
     const [user] = useAuthState(auth);
+    console.log(user);
 
 
     const handleLogout = () => {
@@ -23,9 +24,6 @@ const Header = () => {
                     {/* <img src = "images/shopping-bag-icon.png" alt = "site icon"> */}
                     <span className="text-uppercase fw-lighter ms-2">Brite Express</span>
                 </NavLink>
-
-
-
                 <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -33,34 +31,25 @@ const Header = () => {
                 <div className="collapse navbar-collapse order-lg-1" id="navMenu">
                     <ul className="navbar-nav mx-auto text-center">
                         <li className="nav-item px-2 py-2">
-                            <a className="nav-link text-uppercase text-dark" href="#header">home</a>
+                            <NavLink to='/' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span> home</NavLink>
                         </li>
                         <li className="nav-item px-2 py-2">
-                            <NavLink to='/inventory' className="nav-link text-uppercase text-dark">inventory</NavLink>
+                            <NavLink to='/inventory' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span> inventory</NavLink>
                         </li>
                         <li className="nav-item px-2 py-2">
-                            <NavLink to='/services' className="nav-link text-uppercase text-dark">Services</NavLink>
+                            <NavLink to='/manageInventory' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span>Manage</NavLink>
                         </li>
                         <li className="nav-item px-2 py-2">
-                            <NavLink to='./blog' className="nav-link text-uppercase text-dark">blogs</NavLink>
+                            <NavLink to='./blog' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span>blogs</NavLink>
                         </li>
                         <li className="nav-item px-2 py-2">
-                            <NavLink to='./' className="nav-link text-uppercase text-dark">about us</NavLink>
+                            <NavLink to='./gh' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span>about us</NavLink>
                         </li>
-                        {/* <li className="nav-item px-2 py-2 border-0">
-                            {
-                                user?.uid ?
-                                    (<NavLink to='/login' onClick={handleLogout} className="nav-link text-uppercase text-dark" >logout</NavLink>)
-                                    :
-                                    (<NavLink to='/login' className="nav-link text-uppercase text-dark" >login</NavLink>)
-                            }
-
-                        </li> */}
                     </ul>
-                    <div className="order-lg-2 nav-btns  mx-auto text-center">
+                    <div className="order-lg-2 nav-btns navbar-nav mx-auto text-center">
 
                         <button type="button" className="btn position-relative">
-                            <NavLink className="nav-link text-uppercase text-dark" to="/"><FontAwesomeIcon icon={faUser} />  {user?.displayName}</NavLink>
+                            <NavLink className="nav-link text-uppercase text-dark" to="/">{user?<FontAwesomeIcon icon={faUser} />:''}  {user?.displayName}</NavLink>
                         </button>
                         <button type="button" className="btn position-relative">
                             {

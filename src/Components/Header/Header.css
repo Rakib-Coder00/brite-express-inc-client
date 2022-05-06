@@ -1,22 +1,56 @@
-.navbar{
+.navbar {
     -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
 }
-.nav-link:hover{
-    color: #e5345b!important;
+
+.nav-link:hover {
+    color: #e5345b !important;
 }
-.navbar-brand span{
+
+.nav-link:hover span::before {
+    content: '';
+    bottom: 13px;
+    height: 2px;
+    background-color: #e5345b;
+    transform: translateY(10px);
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+
+.navbar-brand span {
     letter-spacing: 2px;
     font-family: 'Kaisei Tokumin', serif;
 }
-.nav-item{
+
+.nav-item {
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
 }
 
+.active-link span::before {
+    content: '';
+    bottom: 13px;
+    height: 2px;
+    background-color: #e5345b;
+    transform: translateY(10px);
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.nav-link.active-link {
+    color: #e5345b !important;
+}
+
+.link {
+    background: rgba(0, 0, 0, .1);
+    opacity: 0;
+}
 
 /* media queries */
-@media(min-width: 992px){
-    .nav-item{
+@media(min-width: 992px) {
+    .nav-item {
         border-bottom: none;
     }
 }

@@ -27,7 +27,7 @@ const Inventory = () => {
                                         <span className="fw-bold">Author: </span>John Doe
                                     </small>
                                 </p>
-                                <button onClick={() => navigateToDetail(service._id)} className="btn">Read More</button>
+                                <button onClick={() => navigateToDetail(service._id)} className="btn">Update</button>
                             </div>
                         </div>
                     ))

@@ -3,7 +3,7 @@ import './Services.css'
 import useServices from './../../Hooks/useServices';
 
 const Services = () => {
-    const [services, setServices] = useServices()
+    const [services] = useServices()
     return (
         <div className='container py-5'>
             <div className='title text-center'>
