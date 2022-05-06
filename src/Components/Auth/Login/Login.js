@@ -3,10 +3,10 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import {  useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faLock, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import './Login.css'
 import auth from './../../../Firebase/Firebase.init';
 import toast from 'react-hot-toast';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import './Login.css'
 
 const Login = () => {
     const navigate = useNavigate();

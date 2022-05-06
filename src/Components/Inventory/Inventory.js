@@ -1,13 +1,18 @@
 import React from 'react';
-import './Services.css'
+import { useNavigate } from 'react-router-dom';
 import useServices from './../../Hooks/useServices';
 
-const Services = () => {
+const Inventory = () => {
     const [services, setServices] = useServices()
+    const navigate = useNavigate()
+    const navigateToDetail = id => {
+        console.log(id);
+        navigate(`/service/${id}`)
+    }
     return (
-        <div className='container py-5'>
+        <div className='container  py-5'>
             <div className='title text-center'>
-                <h2 className='position-relative d-inline-block'>Our Services</h2>
+                <h2 className='position-relative d-inline-block'>Our Inventory</h2>
             </div>
             <div className="row g-3 py-5">
                 {
@@ -22,7 +27,7 @@ const Services = () => {
                                         <span className="fw-bold">Author: </span>John Doe
                                     </small>
                                 </p>
-                                <button className="btn">Read More</button>
+                                <button onClick={() => navigateToDetail(service._id)} className="btn">Read More</button>
                             </div>
                         </div>
                     ))
@@ -32,4 +37,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default Inventory;

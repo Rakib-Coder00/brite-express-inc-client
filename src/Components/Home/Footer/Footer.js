@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight, faEnvelope, faMapMarkedAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faGoogle, faInstagram, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css'
 
 const Footer = () => {
@@ -28,7 +28,7 @@ const Footer = () => {
                                 </NavLink>
                             </li>
                             <li className="my-3">
-                                <NavLink to='/' className="text-white text-decoration-none text-muted">
+                                <NavLink to='/blog' className="text-white text-decoration-none text-muted">
                                     <FontAwesomeIcon className='me-1' icon={faChevronRight} /> Blogs
                                 </NavLink>
                             </li>

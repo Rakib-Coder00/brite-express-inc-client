@@ -9,6 +9,8 @@ import NotFound from './Components/NotFound/NotFound';
 import Services from './Components/Services/Services';
 import Signup from './Components/Auth/Signup/Signup';
 import Blog from './Components/Blog/Blog';
+import Inventory from './Components/Inventory/Inventory';
+import MyItems from './Components/MyItems/MyItems';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
         <Route path="/services" element={<Services/>} />
+        <Route path="/inventory" element={<Inventory/>} />
+        <Route path="/service/:serviceId" element={<MyItems/>} />
         <Route path="/blog" element={<Blog/>} />
         <Route path='*' element={<NotFound/>}></Route>
       </Routes>
