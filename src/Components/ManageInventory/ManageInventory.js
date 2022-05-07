@@ -1,11 +1,27 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import { useForm } from "react-hook-form";
 import useServices from '../../Hooks/useServices';
 import PageTitle from '../PageTitle/PageTitle';
 
 const ManageInventory = () => {
-    const [services] = useServices() 
+    const [services, setServices] = useServices() 
+    const handleDelete = (id) => {
+        const proceedConfirmation = window.confirm('Are you sure you want to delete this service?')
+        if (proceedConfirmation) {
+            fetch(`http://localhost:5000/service/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json'
+                }
+            })
+                .then(res => res.json())
+                .then(result => {
+                    console.log(result);
+                    const remainingItems = services.filter(service => service._id !== id)
+                    setServices(remainingItems)
+                })
+        }
+    }
     return (
         <div className='container my-5'>
             <PageTitle title='Manage Inventory'/>
@@ -19,7 +35,7 @@ const ManageInventory = () => {
                         <th>#</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Username</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +45,7 @@ const ManageInventory = () => {
                                 <td>1</td>
                                 <td>{service.name}</td>
                                 <td>Otto</td>
-                                <td>@mdo</td>
+                                <td><button onClick={()=>handleDelete(service._id)}>Delete</button></td>
                             </tr>
                         ))
                     }
