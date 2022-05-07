@@ -4,16 +4,20 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import auth from '../../Firebase/Firebase.init';
 import './Header.css'
 
 const Header = () => {
     const [user] = useAuthState(auth);
+    const location = useLocation()
+    const navigate = useNavigate();
+    let from = location.state?.from?.pathname || "/";
 
 
     const handleLogout = () => {
         signOut(auth);
+        navigate(from, { replace: true })
         toast.success('Successfully Logout!', { id: 'logout' })
     }
     return (

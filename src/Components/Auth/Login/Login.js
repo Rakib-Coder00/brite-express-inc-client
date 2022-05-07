@@ -65,7 +65,7 @@ const Login = () => {
             toast.success('Sent email', { "id": 'success' })
         }
         else {
-            toast.error('Please enter your email', { "1d": 'error' })
+            toast.error('Please enter your email', { "id": 'error' })
         }
     }
     return (

@@ -30,8 +30,12 @@ function App() {
             <MyItems />
           </RequireAuth>
         } />
+        <Route path="/add" element={
+          <RequireAuth>
+            <AddItem/>
+          </RequireAuth>
+        } />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/add" element={<AddItem/>} />
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Toaster />

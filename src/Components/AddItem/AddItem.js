@@ -1,22 +1,10 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 
 const AddItem = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        console.log(data);
-
-        // fetch(`http://localhost:5000/service`, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
         const url = 'http://localhost:5000/service'
         fetch(url, {
             method: 'POST',
@@ -29,6 +17,7 @@ const AddItem = () => {
             .then(result => {
                 console.log(result);
             })
+            toast.success('Item added successfully', { "id": 'added' });
     }
     return (
         <div className="w-50 mx-auto">

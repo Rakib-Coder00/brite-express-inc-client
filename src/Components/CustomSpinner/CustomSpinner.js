@@ -3,8 +3,8 @@ import './CustomSpinner.css'
 
 const CustomSpinner = () => {
     return (
-        <div className='spinner'>
-            <svg class="pl" viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <div className='spinner position-relative'>
+            <svg class="pl position-absolute" viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="pl-grad1" x1="1" y1="0.5" x2="0" y2="0.5">
                         <stop offset="0%" stop-color="hsl(313,90%,55%)" />

@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
 import auth from './../../../Firebase/Firebase.init';
-import { Spinner } from "react-bootstrap";
+import CustomSpinner from './../../CustomSpinner/CustomSpinner';
 
 const RequireAuth = ({ children }) => {
   let location = useLocation();
@@ -11,17 +11,16 @@ const RequireAuth = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="text-center"> <Spinner animation="border" variant="primary" /></div>
+      <CustomSpinner/>
     )
   }
 
   if (!user) {
-
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
-  // if (!user.emailVerified) {
-  //   return <div><h4 className='text-danger'>Email is not verified</h4></div>
-  // }
+  if (user.providerData[0]?.providerId === 'password' && !user.emailVerified) {
+    return <div><h4 className='text-danger text-center py-5'>Email is not verified</h4></div>
+  }
 
   return children
 };

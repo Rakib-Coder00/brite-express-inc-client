@@ -24,6 +24,7 @@ const Signup = () => {
 
 
     if (user) {
+        console.log(user);
         toast.success('Successfully created!', {id: 'error'})
         navigate('/')
       }
@@ -41,7 +42,6 @@ const Signup = () => {
       }
 
     const handleName = (nameInput) => {
-        console.log(nameInput.value);
         if (nameInput === '') {
             setName({ value: '', error: 'Please provide a Name' })
         } else {
@@ -73,7 +73,7 @@ const Signup = () => {
 
 
     const handleConfirmPassword = (confirmPasswordInput) => {
-        console.log(confirmPasswordInput, password.value);
+        // console.log(confirmPasswordInput, password.value);
         if (confirmPasswordInput === password.value) {
             setConfirmPassword({ value: confirmPasswordInput, error: '' })
         } else {
@@ -94,7 +94,8 @@ const Signup = () => {
 
         if (email.value && password.value && confirmPassword.value === password.value) {
             await createUserWithEmailAndPassword(email.value, password.value)
-            await updateProfile({ displayName: name.value });
+            console.log(name.value);
+            await updateProfile({ displayName: (name.value) });
             toast.success('Updated profile!', { id: 'update' })
         }
 

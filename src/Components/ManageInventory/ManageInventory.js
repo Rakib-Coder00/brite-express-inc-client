@@ -1,10 +1,13 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import toast from 'react-hot-toast';
 import useServices from '../../Hooks/useServices';
 import PageTitle from '../PageTitle/PageTitle';
+import { useNavigate } from 'react-router-dom';
 
 const ManageInventory = () => {
     const [services, setServices] = useServices() 
+    const navigate = useNavigate()
     const handleDelete = (id) => {
         const proceedConfirmation = window.confirm('Are you sure you want to delete this service?')
         if (proceedConfirmation) {
@@ -20,6 +23,10 @@ const ManageInventory = () => {
                     const remainingItems = services.filter(service => service._id !== id)
                     setServices(remainingItems)
                 })
+                toast.success('Item Deleted successfully', { "id": 'deleted' })
+        }
+        else {
+            toast.error('Action Cancelled', { "id": 'cancelled' })
         }
     }
     return (
@@ -40,9 +47,9 @@ const ManageInventory = () => {
                 </thead>
                 <tbody>
                     {
-                        services.map(service => (
+                        services.map((service, index) => (
                             <tr key={service._id}>
-                                <td>1</td>
+                                <td>{index + 1}</td>
                                 <td>{service.name}</td>
                                 <td>Otto</td>
                                 <td><button onClick={()=>handleDelete(service._id)}>Delete</button></td>
@@ -51,6 +58,7 @@ const ManageInventory = () => {
                     }
                 </tbody>
             </Table>
+            <button onClick={()=>navigate('/add')} className='btn text-center'>Add items</button>
         </div>
     );
 };

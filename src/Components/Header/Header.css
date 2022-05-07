@@ -57,3 +57,12 @@
         border-bottom: none;
     }
 }
+@media(max-width: 768px) {
+    .active-link span::before {
+        display: none;
+
+    }
+    .nav-link:hover span::before {
+        display: none;
+    }
+}
