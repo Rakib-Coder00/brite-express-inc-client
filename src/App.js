@@ -6,7 +6,6 @@ import Home from './Components/Home/Home/Home';
 import Header from './Components/Header/Header';
 import { Toaster } from 'react-hot-toast';
 import NotFound from './Components/NotFound/NotFound';
-import Services from './Components/Services/Services';
 import Signup from './Components/Auth/Signup/Signup';
 import Blog from './Components/Blog/Blog';
 import Inventory from './Components/Inventory/Inventory';

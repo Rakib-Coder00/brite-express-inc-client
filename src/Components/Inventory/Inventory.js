@@ -1,9 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import PageTitle from '../PageTitle/PageTitle';
 import useServices from './../../Hooks/useServices';
 
 const Inventory = () => {
-    const [services, setServices] = useServices()
+    const [services] = useServices()
     const navigate = useNavigate()
     const navigateToDetail = id => {
         console.log(id);
@@ -11,6 +12,7 @@ const Inventory = () => {
     }
     return (
         <div className='container  py-5'>
+            <PageTitle title='Inventory'/>
             <div className='title text-center'>
                 <h2 className='position-relative d-inline-block'>Our Inventory</h2>
             </div>

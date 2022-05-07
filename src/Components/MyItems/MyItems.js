@@ -16,8 +16,8 @@ const MyItems = () => {
                         </div>
                         <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ipsam.</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga blanditiis, modi exercitationem quae quam eveniet! Minus labore voluptatibus corporis recusandae accusantium velit, nemo, nobis, nulla ullam pariatur totam quos.</p>
-                        <button className="btn mx-2">Read More</button>
-                        <button className="btn">Read More</button>
+                        <button className="btn mx-2">Restock</button>
+                        <button className="btn">Delivered</button>
                     </div>
                     <div class="col-lg-6 order-lg-0">
                         <img src={service.img} alt="" class="img-fluid" />

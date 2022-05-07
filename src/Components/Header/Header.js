@@ -49,7 +49,7 @@ const Header = () => {
                     <div className="order-lg-2 nav-btns navbar-nav mx-auto text-center">
 
                         <button type="button" className="btn position-relative">
-                            <NavLink className="nav-link text-uppercase text-dark" to="/">{user?<FontAwesomeIcon icon={faUser} />:''}  {user?.displayName}</NavLink>
+                            <NavLink className="nav-link text-uppercase text-dark" to="/">{user?<FontAwesomeIcon icon={faUser} />: null}  {user?.displayName}</NavLink>
                         </button>
                         <button type="button" className="btn position-relative">
                             {

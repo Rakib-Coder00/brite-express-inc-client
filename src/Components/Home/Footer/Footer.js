@@ -6,6 +6,8 @@ import { faFacebook, faInstagram, faPinterest, faTwitter } from '@fortawesome/fr
 import './Footer.css'
 
 const Footer = () => {
+    const today = new Date()
+    const year = today.getFullYear()
     return (
         <footer className="bg-dark py-5">
             <div className="container">
@@ -93,7 +95,7 @@ const Footer = () => {
                                     </NavLink>
                                 </li>
                             </ul>
-                    <p>Copyright@2022</p>
+                            <p><small>Copyrights &copy; {year}</small>  Brite Express Inc</p>
                         </div>
                     </div>
                 </div>

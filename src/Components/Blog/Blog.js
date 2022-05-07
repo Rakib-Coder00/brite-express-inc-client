@@ -1,9 +1,11 @@
 import React from 'react';
+import PageTitle from '../PageTitle/PageTitle';
 import './Blog.css'
 
 const Blog = () => {
     return (
         <div className="qna-container min-vh-100">
+            <PageTitle title='Blogs'/>
             <h1>Difference between Javascript and Node JS :</h1>
             <p className="fw-bold">Javascript:</p>
             <p>
