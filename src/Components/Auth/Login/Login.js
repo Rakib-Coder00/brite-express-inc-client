@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import axios from "axios";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import {  useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,6 +8,7 @@ import auth from './../../../Firebase/Firebase.init';
 import toast from 'react-hot-toast';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
+import PageTitle from '../../PageTitle/PageTitle';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -22,7 +24,7 @@ const Login = () => {
 
     if (user) {
         toast.success('Successfully login', { id: 'success' })
-        navigate(from, { replace: true })
+        // navigate(from, { replace: true })
     }
     if (error) {
         toast.error(error.message, { id: 'error' })
@@ -41,7 +43,7 @@ const Login = () => {
     const handlePassword = (passwordInput) => {
         setPassword({ value: passwordInput })
     }
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         if (email.value === '') {
             setEmail({ value: '', error: 'Email is required' })
@@ -50,7 +52,10 @@ const Login = () => {
             setPassword({ value: '', error: 'Password is required' })
         }
         if (email.value && password) {
-            signInWithEmailAndPassword(email.value, password.value)
+            await signInWithEmailAndPassword(email.value, password.value)
+            const {data} = await axios.post('http://localhost:5000/login', {email})
+            localStorage.setItem('accessToken', data.accessToken)
+            navigate(from, { replace: true })
         }
     }
     const resetPassword = async (e) => {
@@ -65,6 +70,7 @@ const Login = () => {
     }
     return (
         <div className="login-container">
+            <PageTitle title='Login'/>
             <div className="screen">
                 <div className="screen__content">
                     <form onSubmit={handleLogin} className="login">

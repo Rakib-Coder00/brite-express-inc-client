@@ -1,11 +1,14 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import { useForm } from "react-hook-form";
 import useServices from '../../Hooks/useServices';
+import PageTitle from '../PageTitle/PageTitle';
 
 const ManageInventory = () => {
-    const [services] = useServices()
+    const [services] = useServices() 
     return (
         <div className='container my-5'>
+            <PageTitle title='Manage Inventory'/>
             <div className='title text-center'>
                 <h2 className='position-relative d-inline-block'>Manage Inventory</h2>
             </div>

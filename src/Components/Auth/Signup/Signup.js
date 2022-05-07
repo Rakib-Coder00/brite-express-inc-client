@@ -6,6 +6,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faLock, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import toast from 'react-hot-toast';
+import PageTitle from '../../PageTitle/PageTitle';
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -100,6 +101,7 @@ const Signup = () => {
     };
     return (
         <div className="login-container py-5">
+            <PageTitle title='Signup'/>
             <div className="signup-screen">
                 <div className="screen__content">
                     <form onSubmit={handleSignUp} className="login">

@@ -10,7 +10,6 @@ import './Header.css'
 
 const Header = () => {
     const [user] = useAuthState(auth);
-    console.log(user);
 
 
     const handleLogout = () => {
@@ -18,7 +17,7 @@ const Header = () => {
         toast.success('Successfully Logout!', { id: 'logout' })
     }
     return (
-        <nav sticky="top" className="navbar navbar-expand-lg navbar-light bg-white py-4">
+        <nav className="navbar navbar-expand-lg navbar-light bg-white py-4 sticky-top">
             <div className="container">
                 <NavLink to='/' className="navbar-brand d-flex justify-content-between align-items-center order-lg-0" >
                     {/* <img src = "images/shopping-bag-icon.png" alt = "site icon"> */}
