@@ -13,7 +13,7 @@ const Services = () => {
                 {
                     services.map(service => (
                         <div key={service._id} className="card border-0 col-md-6 col-lg-4 bg-transparent my-3">
-                            <img src={service.img} alt="" />
+                            <img src={service.picture} alt="" />
                             <div className="card-body px-0">
                                 <h4 className="card-title">{service.name}</h4>
                                 <p className="card-text mt-3 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aspernatur repudiandae nostrum dolorem molestias odio. Sit fugit adipisci omnis quia itaque ratione iusto sapiente reiciendis, numquam officiis aliquid ipsam fuga.</p>

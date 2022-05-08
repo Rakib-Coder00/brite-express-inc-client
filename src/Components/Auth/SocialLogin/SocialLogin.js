@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase/Firebase.init';
 import CustomSpinner from '../../CustomSpinner/CustomSpinner';
-import { Spinner } from 'react-bootstrap';
+
 
 const SocialLogin = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const SocialLogin = () => {
     navigate(from, { replace: true })
   }
   if (error) {
-    toast.error(error.message, { id: 'err' })
+      toast.error(error.message, { id: 'signError' })
   }
   if (loading) {
     return (

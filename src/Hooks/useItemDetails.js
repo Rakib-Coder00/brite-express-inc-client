@@ -7,9 +7,9 @@ const useItemDetails = (serviceId) => {
         fetch(`http://localhost:5000/service/${serviceId}`)
         .then(res => res.json())
         .then(data => setService(data))
-    }, [serviceId])
+    }, [serviceId, service])
         
-    return [service]
+    return [service, setService]
 };
 
 export default useItemDetails;

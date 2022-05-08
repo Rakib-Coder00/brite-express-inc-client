@@ -1,31 +1,28 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import useItemDetails from '../../Hooks/useItemDetails';
+import React, { useEffect, useState } from 'react';
+import { axios } from 'axios';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './../../Firebase/Firebase.init';
 
 const MyItems = () => {
-    const { serviceId } = useParams()
-    const [service] = useItemDetails(serviceId)
+    const [items, setItems] = useState([]);
+    const [user] = useAuthState(auth)
+    useEffect(() => {
+        const getItems = async () => {
+            // const email = user.email
+            const url = `http://localhost:5000/items`;
+            // const {data} = await axios.get(url)
+            // setItems(data);
+            fetch(url)
+            .then(res => res.json())
+            .then(data => setItems(data))
+        }
+        getItems();
+    }, [user])
+    
     return (
-        <div className='container py-5 text-center'>
-            {/* <h3>detail : {service.name} {serviceId}</h3> */}
-            <div class="container">
-                <div class="row gy-lg-5 align-items-center">
-                    <div class="col-lg-6 order-lg-1 text-center text-lg-start">
-                        <div class="title pt-3 pb-5">
-                            <h2 class="position-relative d-inline-block ms-4">{service.name}</h2>
-                        </div>
-                        <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ipsam.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga blanditiis, modi exercitationem quae quam eveniet! Minus labore voluptatibus corporis recusandae accusantium velit, nemo, nobis, nulla ullam pariatur totam quos.</p>
-                        <button className="btn mx-2">Restock</button>
-                        <button className="btn">Delivered</button>
-                    </div>
-                    <div class="col-lg-6 order-lg-0">
-                        <img src={service.img} alt="" class="img-fluid" />
-                    </div>
-                </div>
-            </div>
+        <div>
+            <h4>My items : {items.length}</h4>
         </div>
-
     );
 };
 

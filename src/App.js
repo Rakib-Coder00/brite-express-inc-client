@@ -9,10 +9,11 @@ import NotFound from './Components/NotFound/NotFound';
 import Signup from './Components/Auth/Signup/Signup';
 import Blog from './Components/Blog/Blog';
 import Inventory from './Components/Inventory/Inventory';
-import MyItems from './Components/MyItems/MyItems';
 import RequireAuth from './Components/Auth/RequireAuth/RequireAuth';
 import ManageInventory from './Components/ManageInventory/ManageInventory';
 import AddItem from './Components/AddItem/AddItem';
+import ItemsDetails from './Components/ItemsDetails/ItemsDetails';
+import MyItems from './Components/MyItems/MyItems';
 
 function App() {
   return (
@@ -27,12 +28,17 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/service/:serviceId" element={
           <RequireAuth>
-            <MyItems />
+            <ItemsDetails />
           </RequireAuth>
         } />
         <Route path="/add" element={
           <RequireAuth>
             <AddItem/>
+          </RequireAuth>
+        } />
+        <Route path="/myitems" element={
+          <RequireAuth>
+            <MyItems/>
           </RequireAuth>
         } />
         <Route path="/blog" element={<Blog />} />

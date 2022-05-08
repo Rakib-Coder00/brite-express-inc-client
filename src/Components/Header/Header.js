@@ -51,9 +51,18 @@ const Header = () => {
                     </ul>
                     <div className="order-lg-2 nav-btns navbar-nav mx-auto text-center">
 
-                        <button type="button" className="btn position-relative">
-                            <NavLink className="nav-link text-uppercase text-dark" to="/">{user?<FontAwesomeIcon icon={faUser} />: null}  {user?.displayName}</NavLink>
-                        </button>
+
+                        <div className="dropdown">
+                            <button type="button" className="btn position-relative"   id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <NavLink className="nav-link text-uppercase text-dark  dropdown-toggle" to="/">{user ? <FontAwesomeIcon icon={faUser} /> : null}  {user?.displayName}</NavLink>
+                            </button>
+
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><NavLink to='/inventory' className="nav-link text-uppercase text-dark dropdown-item">Manage Items</NavLink></li>
+                                <li><NavLink to='/add' className="nav-link text-dark text-text-sm-center dropdown-item">Add Item</NavLink></li>
+                                <li><NavLink to='/myitems' className="nav-link text-dark dropdown-item">My Items</NavLink></li>
+                            </ul>
+                        </div>
                         <button type="button" className="btn position-relative">
                             {
                                 user?.uid ?
