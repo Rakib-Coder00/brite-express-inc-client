@@ -18,7 +18,7 @@ const Inventory = () => {
                         <div key={service._id} className="card border-0 col-md-6 col-lg-4 bg-transparent my-3">
                             <img src={service.picture} alt="" />
                             <div className="card-body px-0">
-                                <h4 className="card-title">{service.name}</h4>
+                                <h4 className="card-title">{service.product}</h4>
                                 <p className="card-text">
                                     <small className="text-muted">
                                         <span className="fw-bold">Supplier: {service.name}</span> <br />
@@ -35,7 +35,7 @@ const Inventory = () => {
                     ))
                 }
             </div>
-            <button className='btn' onClick={()=> navigate('/manageInventory')}>See All Items <FontAwesomeIcon className='' icon={faArrowRight} /></button>
+            <button className='btn' onClick={()=> navigate('/manageInventory')}>Manage Items <FontAwesomeIcon className='' icon={faArrowRight} /></button>
         </div>
     );
 };
