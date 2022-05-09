@@ -3,8 +3,8 @@ import React from 'react';
 const About = () => {
     return (
         <div>
-            <div className="qna-container about min-vh-100">
-                <h1>About Brite Express Inc</h1>
+            <div className="qna-container min-vh-100">
+                <h1 className='about'>About Brite Express Inc</h1>
                 <h2 className='py-5'>BRITE Express Inc is a knowledge platform for the hospitality & travel industry.</h2>
                 <p className='text-muted'>BRITE EXPRESS IS CHICAGO BASED TRUCKING COMPANY ESTABLISHED IN 2009. WE HAVE 60% OF ACCOUNT DEDICATED LANES. ALL THE CORE PROCESSES ARE SIMPLIFIED, DOCUMENTED AND FBA.
 
