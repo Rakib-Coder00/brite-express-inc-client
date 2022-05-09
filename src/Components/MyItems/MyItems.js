@@ -13,7 +13,7 @@ const MyItems = () => {
     useEffect(() => {
         const getItems = async () => {
             const email = user.email
-            const url = `http://localhost:5000/items?email=${email}`;
+            const url = `https://enigmatic-river-27486.herokuapp.com/items?email=${email}`;
             const {data} = await axios.get(url,{
                     headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -27,7 +27,7 @@ const MyItems = () => {
     const handleDelete = (id) => {
         const proceedConfirmation = window.confirm('Are you sure you want to delete this service?')
         if (proceedConfirmation) {
-            fetch(`http://localhost:5000/service/${id}`, {
+            fetch(`https://enigmatic-river-27486.herokuapp.com/service/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'

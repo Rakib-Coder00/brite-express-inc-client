@@ -19,7 +19,7 @@ const ItemsDetails = () => {
         const restockQuantity = Number(service.quantity) + Number(e.target.number.value)
         const soldItem = Number(service.sold)
 
-        const url = `http://localhost:5000/service/${serviceId}`
+        const url = `https://enigmatic-river-27486.herokuapp.com/service/${serviceId}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -38,7 +38,7 @@ const ItemsDetails = () => {
         const deliveredQuantity = Number(service.quantity) - 1
         const soldItem = Number(service.sold) + 1
         console.log(soldItem);
-        const url = `http://localhost:5000/service/${serviceId}`
+        const url = `https://enigmatic-river-27486.herokuapp.com/service/${serviceId}`
         fetch(url, {
             method: 'PUT',
             headers: {

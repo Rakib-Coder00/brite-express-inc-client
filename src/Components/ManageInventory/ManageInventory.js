@@ -11,7 +11,7 @@ const ManageInventory = () => {
     const handleDelete = (id) => {
         const proceedConfirmation = window.confirm('Are you sure you want to delete this service?')
         if (proceedConfirmation) {
-            fetch(`http://localhost:5000/service/${id}`, {
+            fetch(`https://enigmatic-river-27486.herokuapp.com/service/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'
