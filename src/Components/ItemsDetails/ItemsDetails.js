@@ -71,7 +71,7 @@ const ItemsDetails = () => {
                         </Button>
                         <button onClick={delivered} className="btn">Delivered</button>
                     </div>
-                    <div className="col-lg-6 order-lg-0">
+                    <div className="col-lg-6 order-first order-lg-0">
                         <img src={service.picture} alt="" className="img-fluid" />
                     </div>
                 </div>

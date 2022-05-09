@@ -24,7 +24,7 @@ const Login = () => {
 
     if (user) {
         toast.success('Successfully login', { id: 'success' })
-        // navigate(from, { replace: true })
+        navigate(from, { replace: true })
     }
     if (error) {
         toast.error(error.message, { id: 'error' })
@@ -54,10 +54,12 @@ const Login = () => {
         if (email.value && password) {
             await signInWithEmailAndPassword(email.value, password.value)
             const {data} = await axios.post('http://localhost:5000/login', {email})
+            console.log(data);
             localStorage.setItem('accessToken', data.accessToken)
-            navigate(from, { replace: true })
+            // navigate(from, { replace: true })
         }
     }
+    
     const resetPassword = async (e) => {
         const email = emailRef.current.value
         if (email) {

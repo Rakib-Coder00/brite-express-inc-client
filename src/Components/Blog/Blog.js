@@ -16,12 +16,6 @@ const Blog = () => {
                 Node.JS is based on JavaScript and allows the Node.Js developers to run codes on the servers beyond the web browsers.<br />It needs dedicated servers to perform.Nodejs is used in server-side development.NodeJS usually support single-thread JS language.<br />This is used for creating cross-platform and server-based applications.
             </p>
 
-
-            <h1> When should you use nodejs and when should you use mongodb :</h1>
-            <p>
-                Node.js is an open source server environment which uses JavaScript on the server to develop backend applications.
-            </p>
-
             <h1>Differences between SQL and NoSQL databases. :</h1>
             <p className="fw-bold">SQL:</p>
             <p>

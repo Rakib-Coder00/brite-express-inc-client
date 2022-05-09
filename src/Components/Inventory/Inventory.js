@@ -7,10 +7,6 @@ import useServices from './../../Hooks/useServices';
 const Inventory = () => {
     const [services] = useServices()
     const navigate = useNavigate()
-    const navigateToDetail = id => {
-        // console.log(id);
-        navigate(`/service/${id}`)
-    }
     return (
         <div className='container  py-5'>
             <div className='title text-center'>
@@ -27,12 +23,13 @@ const Inventory = () => {
                                     <small className="text-muted">
                                         <span className="fw-bold">Supplier: {service.name}</span> <br />
                                         <span className="fw-bold">Quantity: {service.quantity}</span> <br />
-                                        <span className="fw-bold">Price: {service.price}</span>
+                                        <span className="fw-bold">Sold: {service.sold}</span> <br />
+                                        <span className="fw-bold">Price: ${service.price}</span>
                                     </small>
                                 </p>
                                 <p className="card-text mt-3 text-muted">{service.description}</p>
                                 
-                                <button onClick={() => navigateToDetail(service._id)} className="btn">Update</button>
+                                <button onClick={() => navigate(`/service/${service._id}`)} className="btn">Update</button>
                             </div>
                         </div>
                     ))

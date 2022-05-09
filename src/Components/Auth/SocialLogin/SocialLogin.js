@@ -18,11 +18,11 @@ const SocialLogin = () => {
     navigate(from, { replace: true })
   }
   if (error) {
-      toast.error(error.message, { id: 'signError' })
+    toast.error(error.message, { id: 'signError' })
   }
   if (loading) {
     return (
-      <CustomSpinner/>
+      <CustomSpinner />
     )
   }
 

@@ -1,14 +1,10 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
-import { axios } from 'axios';
-import auth from '../../Firebase/Firebase.init';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import PageTitle from '../PageTitle/PageTitle';
 
 const AddItem = () => {
     const { register, handleSubmit } = useForm();
-    const [user] = useAuthState(auth);
     const onSubmit = data => {
         console.log(data);
         const url = 'http://localhost:5000/service'
@@ -24,12 +20,6 @@ const AddItem = () => {
                 console.log(result);
             })
         toast.success('Item added successfully', { "id": 'added' });
-
-
-        //  axios.post('http://localhost:5000/items', data)
-        //     .then(res => {
-        //         console.log(res);
-        //     })  
     }
 
 

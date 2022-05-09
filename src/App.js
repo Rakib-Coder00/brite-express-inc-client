@@ -24,11 +24,15 @@ function App() {
         <Route path="/banner" element={<Banner />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/manageInventory" element={<ManageInventory/>} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/service/:serviceId" element={
           <RequireAuth>
             <ItemsDetails />
+          </RequireAuth>
+        } />
+        <Route path="/manageInventory" element={
+          <RequireAuth>
+            <ManageInventory/>
           </RequireAuth>
         } />
         <Route path="/add" element={
