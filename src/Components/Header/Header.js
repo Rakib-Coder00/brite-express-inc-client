@@ -46,7 +46,7 @@ const Header = () => {
                             <NavLink to='./blog' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span>blogs</NavLink>
                         </li>
                         <li className="nav-item px-2 py-2">
-                            <NavLink to='./gh' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span>about us</NavLink>
+                            <NavLink to='./about' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span>about us</NavLink>
                         </li>
                     </ul>
                     <div className="order-lg-2 nav-btns navbar-nav mx-auto text-center">

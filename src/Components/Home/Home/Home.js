@@ -3,7 +3,6 @@ import Careers from '../../Careers/Careers';
 import PageTitle from '../../PageTitle/PageTitle';
 import Services from '../../Services/Services';
 import Banner from '../Banner/Banner';
-import Footer from '../Footer/Footer';
 import Inventory from './../../Inventory/Inventory';
 
 const Home = () => {
@@ -14,7 +13,6 @@ const Home = () => {
            <Inventory/>
            {/* <Services/> */}
            <Careers/>
-           <Footer/>
         </>
     );
 };

@@ -14,6 +14,8 @@ import ManageInventory from './Components/ManageInventory/ManageInventory';
 import AddItem from './Components/AddItem/AddItem';
 import ItemsDetails from './Components/ItemsDetails/ItemsDetails';
 import MyItems from './Components/MyItems/MyItems';
+import Footer from './Components/Home/Footer/Footer';
+import About from './Components/About/About';
 
 function App() {
   return (
@@ -46,8 +48,10 @@ function App() {
           </RequireAuth>
         } />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/about" element={<About/>} />
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
+      <Footer/>
       <Toaster />
     </div>
   );
