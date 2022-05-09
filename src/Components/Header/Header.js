@@ -36,9 +36,9 @@ const Header = () => {
                         <li className="nav-item px-2 py-2">
                             <NavLink to='/' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span> home</NavLink>
                         </li>
-                        <li className="nav-item px-2 py-2">
+                        {/* <li className="nav-item px-2 py-2">
                             <NavLink to='/inventory' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span> inventory</NavLink>
-                        </li>
+                        </li> */}
                         <li className="nav-item px-2 py-2">
                             <NavLink to='/manageInventory' className={({ isActive }) => (isActive ? "nav-link text-uppercase text-dark position-relative active-link" : "nav-link text-uppercase text-dark position-relative")}><span></span>Manage</NavLink>
                         </li>

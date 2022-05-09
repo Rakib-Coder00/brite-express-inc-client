@@ -31,9 +31,8 @@ const AddItem = () => {
                 <h2 className='position-relative d-inline-block'>Add Your Items</h2>
             </div>
             <form className="d-flex flex-column my-3" onSubmit={handleSubmit(onSubmit)}>
-                <label>Name :</label>
                 <input className="mb-2" placeholder="Name" {...register("name", { required: true, maxLength: 20 })} required />
-                <label>Email :</label>
+                <input className="mb-2" placeholder="Product Name" {...register("product", { required: true, maxLength: 20 })} required />
                 <input className="mb-2" placeholder="Email" type="email" {...register("email")} required />
                 <textarea className="mb-2" placeholder="description" {...register("description")} />
                 <input className="mb-2" placeholder="Price" type="number" {...register("price")} />

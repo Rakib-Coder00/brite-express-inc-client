@@ -1,3 +1,128 @@
+.title h2::before {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 50px;
+    background-color: orangered;
+    left: -20px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.btn:not(.nav-btns button, .social-icons button) {
+    background-color: #fff;
+    color: rgb(85, 85, 85);
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+.btn:not(.nav-btns button, .social-icons button):hover {
+    background-color: orangered;
+    color: #fff;
+    border-color: orangered;
+}
+
+.inventory-container {
+    border: 0.2rem solid #443;
+    border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+}
+
+.careers {
+    background-color: rgba(179, 179, 179, 0.05);
+}
+
+.about {
+    /* color: #A6570C; */
+    color: orangered;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+/* review  */
+.review {
+    margin: 100px 0;
+
+}
+
+.review .carousel-item {
+    text-align: center !important;
+    height: 450px !important;
+
+}
+
+.review .carousel-item img {
+    width: 150px !important;
+    border-radius: 50%;
+}
+
+.review .carousel-caption {
+    z-index: -1 !important;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 15px 1px rgba(166, 163, 223, 0.5);
+}
+
+.review .carousel-caption h5 {
+    margin-top: 55px !important;
+    font-weight: bold;
+    color: #000;
+}
+
+.review .carousel-caption small {
+    margin-top: 10px !important;
+    display: block;
+    margin-bottom: 50px !important;
+    color: #000;
+}
+
+.review .carousel-inner .carousel-caption p {
+    text-align: center;
+    padding: 0 50px;
+    font-size: 15px;
+    margin-bottom: 50px;
+    color: #808080;
+}
+
+@media (max-width: 991px) {
+    .review .carousel-item {
+        height: 500px !important;
+    }
+
+    .review .carousel-caption {
+        margin: 0 10px 50px 10px !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .front-page .carousel-caption h5 {
+        font-size: 16px !important;
+    }
+
+    .front-page .carousel-caption p {
+        display: none;
+    }
+    .sm-btn {
+        padding: 5px 6px !important;
+        font-size: 16px !important;
+    }
+    .btn:not(.nav-btns button, .social-icons button) {
+        background-color: #fff;
+        color: rgb(85, 85, 85);
+        padding: 10px 20px !important;
+        border-radius: 25px;
+        border: 1px solid rgb(85, 85, 85);
+    }
+    .front-page .carousel-caption {
+        bottom: 40px !important;
+    }
+}
 @media screen and (min-width: 1100px) {
     .caption {
         bottom: 14.25rem !important;

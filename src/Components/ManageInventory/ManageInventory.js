@@ -53,7 +53,7 @@ const ManageInventory = () => {
                             <tr key={service._id}>
                                 <td>{index + 1}</td>
                                 <td>{service.name}</td>
-                                <td>{service.name}</td>
+                                <td>{service.product}</td>
                                 <td>{service.price}</td>
                                 <td>{service.quantity}</td>
                                 <td><button onClick={()=>handleDelete(service._id)}>Delete</button></td>

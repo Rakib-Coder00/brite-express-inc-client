@@ -4,6 +4,7 @@ import auth from './../../Firebase/Firebase.init';
 import PageTitle from './../PageTitle/PageTitle';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const MyItems = () => {
     const [items, setItems] = useState([]);
@@ -23,6 +24,27 @@ const MyItems = () => {
         getItems();
     }, [user])
     
+    const handleDelete = (id) => {
+        const proceedConfirmation = window.confirm('Are you sure you want to delete this service?')
+        if (proceedConfirmation) {
+            fetch(`http://localhost:5000/service/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json'
+                }
+            })
+                .then(res => res.json())
+                .then(result => {
+                    console.log(result);
+                    const remainingItems = items.filter(service => service._id !== id)
+                    setItems(remainingItems)
+                })
+                toast.success('Item Deleted successfully', { "id": 'deleted' })
+        }
+        else {
+            toast.error('Action Cancelled', { "id": 'cancelled' })
+        }
+    }
     return (
         <div className='container  py-5'>
             <PageTitle title='My Items'/>
@@ -47,6 +69,7 @@ const MyItems = () => {
                             <p className="card-text mt-3 text-muted">{service.description}</p>
                             
                             <button onClick={() => navigate(`/service/${service._id}`)} className="btn">Update</button>
+                            <button onClick={()=>handleDelete(service._id)} className="btn mx-3">Delete</button>
                         </div>
                     </div>
                 ))
