@@ -18,7 +18,7 @@ const Banner = () => {
                     <img className="d-block w-100 " src={banner1} alt="First slide" />
                     <Carousel.Caption className="caption">
                         <h2 className='text-yellow fs-1'>Welcome To Brite Express.</h2>
-                        <p>Design Your Perfect Choice.</p>
+                        <p>Book Your Perfect Choice.</p>
                         <button className="btn btn-light  text-primary btn-lg px-5 py-3 rounded-3 fw-bolder sm-btn">Book Now
                         </button>
                     </Carousel.Caption>
