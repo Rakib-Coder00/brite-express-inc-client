@@ -4,12 +4,13 @@ import toast from 'react-hot-toast';
 import { axios } from 'axios';
 import auth from '../../Firebase/Firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import PageTitle from '../PageTitle/PageTitle';
 
-const AddItem = (e) => {
-    const { register, handleSubmit} = useForm();
+const AddItem = () => {
+    const { register, handleSubmit } = useForm();
     const [user] = useAuthState(auth);
-    console.log(user);
     const onSubmit = data => {
+        console.log(data);
         const url = 'http://localhost:5000/service'
         fetch(url, {
             method: 'POST',
@@ -22,28 +23,35 @@ const AddItem = (e) => {
             .then(result => {
                 console.log(result);
             })
-            toast.success('Item added successfully', { "id": 'added' });
+        toast.success('Item added successfully', { "id": 'added' });
 
 
-         axios.post('http://localhost:5000/items', data)
-            .then(res => {
-                console.log(res);
-            })  
+        //  axios.post('http://localhost:5000/items', data)
+        //     .then(res => {
+        //         console.log(res);
+        //     })  
     }
+
+
+
     return (
-        <div className="w-50 mx-auto">
-            <h3>Please Add Service</h3>
-            <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
+        <div className="w-50 mx-auto my-5">
+            <PageTitle title='Add Item' />
+            <div className='title text-center'>
+                <h2 className='position-relative d-inline-block'>Add Your Items</h2>
+            </div>
+            <form className="d-flex flex-column my-3" onSubmit={handleSubmit(onSubmit)}>
                 <label>Name :</label>
-                <input value={user.displayName} className="mb-2" placeholder="Name" {...register("name", { required: true, maxLength: 20 })}  required readOnly disabled/>
+                <input className="mb-2" placeholder="Name" {...register("name", { required: true, maxLength: 20 })} required />
                 <label>Email :</label>
-                <input className="mb-2" placeholder="Email" value={user.email} type="email" {...register("email")} required readOnly disabled />
+                <input className="mb-2" placeholder="Email" type="email" {...register("email")} required />
                 <textarea className="mb-2" placeholder="description" {...register("description")} />
                 <input className="mb-2" placeholder="Price" type="number" {...register("price")} />
                 <input className="mb-2" placeholder="Quantity" type="number" {...register("quantity")} />
+                <input className="mb-2" placeholder="Sold" type="number" {...register("sold")} />
                 <input className="mb-2" placeholder="Phot URL" type="text" {...register("picture")} />
-                <input type="submit" value='Add Service' />
-                <input type="reset" value='Reset Value' />
+                <input className='btn' type="submit" value='Add Service' />
+                <input className='btn my-3' type="reset" value='Reset Value' />
             </form>
         </div>
     );

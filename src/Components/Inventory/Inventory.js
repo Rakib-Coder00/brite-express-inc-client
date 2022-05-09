@@ -2,7 +2,6 @@ import React from 'react';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
-import PageTitle from '../PageTitle/PageTitle';
 import useServices from './../../Hooks/useServices';
 
 const Inventory = () => {
@@ -14,13 +13,12 @@ const Inventory = () => {
     }
     return (
         <div className='container  py-5'>
-            <PageTitle title='Inventory'/>
             <div className='title text-center'>
-                <h2 className='position-relative d-inline-block'>Our Inventory :{services.length}</h2>
+                <h2 className='position-relative d-inline-block'>Our Inventory</h2>
             </div>
-            <div className="row g-3 py-5">
+            <div className="row g-3 py-5 ">
                 {
-                    services.map(service => (
+                    services.slice(0,6).map(service => (
                         <div key={service._id} className="card border-0 col-md-6 col-lg-4 bg-transparent my-3">
                             <img src={service.picture} alt="" />
                             <div className="card-body px-0">
@@ -32,7 +30,7 @@ const Inventory = () => {
                                         <span className="fw-bold">Price: {service.price}</span>
                                     </small>
                                 </p>
-                                <p className="card-text mt-3 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aspernatur repudiandae nostrum dolorem molestias odio. Sit fugit adipisci omnis quia itaque ratione iusto sapiente reiciendis, numquam officiis aliquid ipsam fuga.</p>
+                                <p className="card-text mt-3 text-muted">{service.description}</p>
                                 
                                 <button onClick={() => navigateToDetail(service._id)} className="btn">Update</button>
                             </div>
@@ -40,7 +38,7 @@ const Inventory = () => {
                     ))
                 }
             </div>
-            <button className='btn' onClick={()=> navigate('/blog')}>See All Items <FontAwesomeIcon className='' icon={faArrowRight} /></button>
+            <button className='btn' onClick={()=> navigate('/manageInventory')}>See All Items <FontAwesomeIcon className='' icon={faArrowRight} /></button>
         </div>
     );
 };

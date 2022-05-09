@@ -58,7 +58,7 @@ const Header = () => {
                             </button>
 
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><NavLink to='/inventory' className="nav-link text-uppercase text-dark dropdown-item">Manage Items</NavLink></li>
+                                <li><NavLink to='/manageInventory' className="nav-link text-uppercase text-dark dropdown-item">Manage Items</NavLink></li>
                                 <li><NavLink to='/add' className="nav-link text-dark text-text-sm-center dropdown-item">Add Item</NavLink></li>
                                 <li><NavLink to='/myitems' className="nav-link text-dark dropdown-item">My Items</NavLink></li>
                             </ul>

@@ -35,13 +35,15 @@ const ManageInventory = () => {
             <div className='title text-center'>
                 <h2 className='position-relative d-inline-block'>Manage Inventory</h2>
             </div>
-
-            <Table responsive className='my-5' striped bordered hover variant="dark">
+            <button onClick={()=>navigate('/add')} className='btn text-center my-3'>Add items</button>
+            <Table responsive className='my-3' striped bordered hover variant="dark">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>{services.length}</th>
+                        <th>Supplier</th>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -51,14 +53,16 @@ const ManageInventory = () => {
                             <tr key={service._id}>
                                 <td>{index + 1}</td>
                                 <td>{service.name}</td>
-                                <td>Otto</td>
+                                <td>{service.name}</td>
+                                <td>{service.price}</td>
+                                <td>{service.quantity}</td>
                                 <td><button onClick={()=>handleDelete(service._id)}>Delete</button></td>
                             </tr>
                         ))
                     }
                 </tbody>
             </Table>
-            <button onClick={()=>navigate('/add')} className='btn text-center'>Add items</button>
+            
         </div>
     );
 };
