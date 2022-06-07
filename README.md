@@ -1,6 +1,10 @@
 # BRITE EXPRESS INC
 
 - BRITE Express Inc is a  leading professional truck warehousing services provider.
+- This is a Single Page full stack web Application.
+- Responsive interface ,  user-friendly and Social Login Integration.
+- User can edit Inventory Management and delete added Items.
+- Admin can manage all orders, upload products, and cancel orders.
 
 - BRITE EXPRESS IS CHICAGO BASED TRUCKING COMPANY ESTABLISHED IN 2009. WE HAVE 60% OF ACCOUNT DEDICATED LANES. ALL THE CORE PROCESSES ARE SIMPLIFIED, DOCUMENTED AND FBA.
 
